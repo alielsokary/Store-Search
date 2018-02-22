@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,10 +18,40 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-yX-dXo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eTm-o0-4lI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8F3-gV-bkc"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book." translatesAutoresizingMaskIntoConstraints="NO" id="fNG-XR-Lnm">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TCf-fy-uDE"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VEd-yX-dXo" secondAttribute="trailing" id="9xI-aU-orv"/>
+                            <constraint firstAttribute="trailing" secondItem="fNG-XR-Lnm" secondAttribute="trailing" id="T7J-jz-v2f"/>
+                            <constraint firstItem="fNG-XR-Lnm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xbj-ip-vgi"/>
+                            <constraint firstItem="VEd-yX-dXo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yjk-ua-s6A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VEd-yX-dXo" secondAttribute="bottom" id="cSG-ov-fSi"/>
+                            <constraint firstItem="VEd-yX-dXo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jmP-Ja-r43"/>
+                            <constraint firstItem="fNG-XR-Lnm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tVp-dL-AAK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="fNG-XR-Lnm" id="Fwd-da-HPA"/>
+                        <outlet property="tableView" destination="VEd-yX-dXo" id="0zv-ub-3xt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

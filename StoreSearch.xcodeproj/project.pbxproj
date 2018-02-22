@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41AA3A71203F8AFD000CB2E6 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA3A70203F8AFD000CB2E6 /* SearchResult.swift */; };
 		41EB19FB203BF4950026D531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB19FA203BF4950026D531 /* AppDelegate.swift */; };
 		41EB19FD203BF4950026D531 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB19FC203BF4950026D531 /* SearchViewController.swift */; };
 		41EB1A00203BF4950026D531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EB19FE203BF4950026D531 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41AA3A70203F8AFD000CB2E6 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		41EB19F7203BF4950026D531 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EB19FA203BF4950026D531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41EB19FC203BF4950026D531 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				41EB19FA203BF4950026D531 /* AppDelegate.swift */,
 				41EB19FC203BF4950026D531 /* SearchViewController.swift */,
+				41AA3A70203F8AFD000CB2E6 /* SearchResult.swift */,
 				41EB19FE203BF4950026D531 /* Main.storyboard */,
 				41EB1A01203BF4950026D531 /* Assets.xcassets */,
 				41EB1A03203BF4950026D531 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41EB19FD203BF4950026D531 /* SearchViewController.swift in Sources */,
+				41AA3A71203F8AFD000CB2E6 /* SearchResult.swift in Sources */,
 				41EB19FB203BF4950026D531 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
