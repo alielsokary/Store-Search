@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StoreSearch/DetailViewController.swift"
-            timestampString = "542372455.955635"
+            timestampString = "542626215.75056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "updateUI()"
             landmarkType = "7">
             <Locations>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StoreSearch/DetailViewController.swift"
-            timestampString = "542372455.955635"
+            timestampString = "542626215.75056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "updateUI()"
             landmarkType = "7">
          </BreakpointContent>

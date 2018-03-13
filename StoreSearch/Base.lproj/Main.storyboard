@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-yX-dXo">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="eTm-o0-4lI"/>
@@ -30,19 +30,19 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book." translatesAutoresizingMaskIntoConstraints="NO" id="fNG-XR-Lnm">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="568" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="TCf-fy-uDE"/>
                                 </connections>
                             </searchBar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcP-86-z0R">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="568" height="44"/>
                                 <items>
                                     <navigationItem id="Yu3-W1-5vR">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ICJ-GC-xob">
-                                            <rect key="frame" x="10" y="7" width="300" height="30"/>
+                                            <rect key="frame" x="134" y="7" width="300" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="All"/>
@@ -91,11 +91,11 @@
                         <viewControllerLayoutGuide type="bottom" id="AHP-wa-ayE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I7G-0N-7hy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egX-Gz-wbW" userLabel="Pop-up View">
-                                <rect key="frame" x="40" y="163" width="240" height="242"/>
+                                <rect key="frame" x="164" y="39" width="240" height="242"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTk-ML-OqH" userLabel="Close Button">
                                         <rect key="frame" x="3" y="0.0" width="15" height="22"/>
@@ -207,6 +207,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMc-vL-Qov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744" y="35"/>
+        </scene>
+        <!--Landscape View Controller-->
+        <scene sceneID="ald-HA-YKD">
+            <objects>
+                <viewController storyboardIdentifier="LandscapeViewController" id="Plh-iS-3Lj" customClass="LandscapeViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ye-e0-w5j"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xd9-Lv-zBB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1ma-3C-WFB">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2j-fy-nBV">
+                                <rect key="frame" x="263" y="150" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D2j-fy-nBV" firstAttribute="centerY" secondItem="1ma-3C-WFB" secondAttribute="centerY" id="6pD-PI-xYU"/>
+                            <constraint firstItem="D2j-fy-nBV" firstAttribute="centerX" secondItem="1ma-3C-WFB" secondAttribute="centerX" id="ycq-jA-web"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFM-ls-hc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1363" y="400"/>
         </scene>
     </scenes>
     <resources>
