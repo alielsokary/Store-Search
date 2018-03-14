@@ -20,6 +20,7 @@
 		415BB4E9205423FB0080DC5B /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415BB4E8205423FB0080DC5B /* LandscapeViewController.swift */; };
 		419E684C2047C8CB00BE0A76 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419E684B2047C8CB00BE0A76 /* LoadingCell.xib */; };
 		41AA3A71203F8AFD000CB2E6 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA3A70203F8AFD000CB2E6 /* SearchResult.swift */; };
+		41E992492059D521002661EC /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E992482059D521002661EC /* Search.swift */; };
 		41EB19FB203BF4950026D531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB19FA203BF4950026D531 /* AppDelegate.swift */; };
 		41EB19FD203BF4950026D531 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB19FC203BF4950026D531 /* SearchViewController.swift */; };
 		41EB1A00203BF4950026D531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41EB19FE203BF4950026D531 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		415BB4E8205423FB0080DC5B /* LandscapeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		419E684B2047C8CB00BE0A76 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		41AA3A70203F8AFD000CB2E6 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		41E992482059D521002661EC /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		41EB19F7203BF4950026D531 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EB19FA203BF4950026D531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41EB19FC203BF4950026D531 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				415BB4E62054210D0080DC5B /* SlideOutAnimationController.swift */,
 				415BB4E8205423FB0080DC5B /* LandscapeViewController.swift */,
 				4137BC142057D0F2000FC687 /* FadeOutAnimationController.swift */,
+				41E992482059D521002661EC /* Search.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E992492059D521002661EC /* Search.swift in Sources */,
 				41EB19FD203BF4950026D531 /* SearchViewController.swift in Sources */,
 				4106E09F204EDD9000D67228 /* DimmingPresentationController.swift in Sources */,
 				4137BC152057D0F2000FC687 /* FadeOutAnimationController.swift in Sources */,
