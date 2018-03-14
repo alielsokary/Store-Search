@@ -14,6 +14,7 @@ class LandscapeViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
 
     var searchResults = [SearchResult]()
+    private var downloadTasks = [URLSessionDownloadTask]()
     private var firstTime = true
 
 
@@ -49,6 +50,9 @@ class LandscapeViewController: UIViewController {
 
     deinit {
         print("deinit \(self)")
+        for task in downloadTasks {
+            task.cancel()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,8 +108,9 @@ class LandscapeViewController: UIViewController {
         var x = marginX
         for (index, searchResult) in searchResults.enumerated() {
             let button = UIButton(type: .system)
+            downloadImage(for: searchResult, andPlaceOn: button)
             button.backgroundColor = UIColor.white
-            button.setTitle("\(index)", for: .normal)
+            button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
             button.frame = CGRect(x: x + paddingHorz, y:  marginY + CGFloat(row) * itemHeight + paddingVert + CGFloat(row), width: buttonWidth, height: buttonHeight)
             scrollView.addSubview(button)
 
@@ -127,7 +132,25 @@ class LandscapeViewController: UIViewController {
         pageControl.numberOfPages = numPages
         pageControl.currentPage = 0
     }
-    
+
+    private func downloadImage(for searchResult: SearchResult, andPlaceOn button: UIButton) {
+          if let url = URL(string: searchResult.artworkSmallURL) {
+                let downloadTask = URLSession.shared.downloadTask(with: url) {
+                [weak button] url, response, error in
+                    if error == nil, let url = url,
+                        let data = try? Data(contentsOf: url),
+                        let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            if let button = button {
+                                button.setImage(image, for: .normal)
+                            }
+                        }
+                    }
+            }
+            downloadTask.resume()
+            downloadTasks.append(downloadTask)
+        }
+    }
 
     /*
     // MARK: - Navigation
