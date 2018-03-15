@@ -44,7 +44,16 @@ class LandscapeViewController: UIViewController {
 
         if firstTime {
             firstTime = false
-            tileButtons(search.searchResults)
+            switch search.state {
+            case .notSearchedYet:
+                break
+            case .loading:
+                break
+            case .noResults:
+                break
+            case .results(let list):
+                tileButtons(list)
+            }
         }
     }
 
@@ -68,7 +77,6 @@ class LandscapeViewController: UIViewController {
     }
 
     private func tileButtons(_ searchResults: [SearchResult]) {
-
         var columnsPerPage = 5
         var rowsPerPage = 3
         var itemWidth: CGFloat = 96
@@ -83,20 +91,22 @@ class LandscapeViewController: UIViewController {
             columnsPerPage = 6
             itemWidth = 94
             marginX = 2
+
         case 667:
             columnsPerPage = 7
             itemWidth = 95
             itemHeight = 98
             marginX = 1
             marginY = 29
+
         case 736:
             columnsPerPage = 8
             rowsPerPage = 4
             itemWidth = 92
+
         default:
             break
         }
-
 
         let buttonWidth: CGFloat = 82
         let buttonHeight: CGFloat = 82
@@ -107,31 +117,41 @@ class LandscapeViewController: UIViewController {
         var column = 0
         var x = marginX
         for (index, searchResult) in searchResults.enumerated() {
-            let button = UIButton(type: .system)
-            downloadImage(for: searchResult, andPlaceOn: button)
-            button.backgroundColor = UIColor.white
+            let button = UIButton(type: .custom)
             button.setBackgroundImage(UIImage(named: "LandscapeButton"), for: .normal)
-            button.frame = CGRect(x: x + paddingHorz, y:  marginY + CGFloat(row) * itemHeight + paddingVert + CGFloat(row), width: buttonWidth, height: buttonHeight)
+
+            button.frame = CGRect(
+                x: x + paddingHorz,
+                y: marginY + CGFloat(row)*itemHeight + paddingVert,
+                width: buttonWidth, height: buttonHeight)
+
             scrollView.addSubview(button)
+
+            downloadImage(for: searchResult, andPlaceOn: button)
 
             row += 1
             if row == rowsPerPage {
                 row = 0; x += itemWidth; column += 1
 
-            }
-            if column == columnsPerPage {
-                column = 0; x += marginX * 2;
+                if column == columnsPerPage {
+                    column = 0; x += marginX * 2
+                }
             }
         }
 
         let buttonsPerPage = columnsPerPage * rowsPerPage
         let numPages = 1 + (searchResults.count - 1) / buttonsPerPage
-        scrollView.contentSize = CGSize(width: CGFloat(numPages)*scrollViewWidth, height: scrollView.bounds.size.height)
-
+        
+        scrollView.contentSize = CGSize(
+            width: CGFloat(numPages)*scrollViewWidth,
+            height: scrollView.bounds.size.height)
+        
         print("Number of pages: \(numPages)")
+        
         pageControl.numberOfPages = numPages
         pageControl.currentPage = 0
     }
+
 
     private func downloadImage(for searchResult: SearchResult, andPlaceOn button: UIButton) {
           if let url = URL(string: searchResult.artworkSmallURL) {
