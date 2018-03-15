@@ -96,6 +96,9 @@ class SearchViewController: UIViewController {
             controller.willMove(toParentViewController: nil)
             coordinator.animate(alongsideTransition: { _ in
                 controller.view.alpha = 0
+                if self.presentedViewController != nil {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }, completion: { _ in
                 controller.view.removeFromSuperview()
                 controller.removeFromParentViewController()
@@ -131,6 +134,7 @@ extension SearchViewController: UISearchBarDelegate {
                 self.showNetworkError()
             }
             self.tableView.reloadData()
+            self.landscapeViewController?.searchResultsReceived()
         })
         tableView.reloadData()
         searchBar.resignFirstResponder()
@@ -160,7 +164,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch search.state {
         case .notSearchedYet:
-            fatalError("Should never get here")
+            return UITableViewCell()// fatalError("Should never get here")
 
         case .loading:
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.loadingCell, for: indexPath)
