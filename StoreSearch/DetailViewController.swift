@@ -18,8 +18,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
 
-    var searchResult: SearchResult!
+    var searchResult: SearchResult! {
+        didSet {
+            if isViewLoaded {
+                updateUI()
+            }
+        }
+    }
+
     var downloadTask: URLSessionDownloadTask?
+    var isPopUp = false
 
     enum AnimationStyle {
         case slide
@@ -48,13 +56,23 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if isPopUp {
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+            gestureRecognizer.cancelsTouchesInView = false
+            gestureRecognizer.delegate = self
+            view.addGestureRecognizer(gestureRecognizer)
+            view.backgroundColor = UIColor.clear
+        } else {
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
+                popupView.isHidden = true
+            if let displayName = Bundle.main.localizedInfoDictionary?["CFBundleDisplayName"] as? String {
+                title = displayName
+            }
+        }
         popupView.layer.cornerRadius = 10
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
-        view.backgroundColor = UIColor.clear
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
-        gestureRecognizer.cancelsTouchesInView = false
-        gestureRecognizer.delegate = self
-        view.addGestureRecognizer(gestureRecognizer)
+
 
         if searchResult != nil {
             updateUI()
@@ -96,6 +114,7 @@ class DetailViewController: UIViewController {
         }
 
         priceButton.setTitle(priceText, for: .normal)
+        popupView.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
